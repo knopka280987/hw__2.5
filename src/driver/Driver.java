@@ -1,6 +1,6 @@
 package driver;
 
-import transport.Transport;
+import com.sun.jdi.connect.Transport;
 
 public abstract class Driver<D extends Transport> {
     private final String name;

@@ -1,51 +1,75 @@
+
 import driver.DriverBus;
 import driver.DriverCar;
 import driver.DriverTruck;
+import transport.Bus;
 import transport.Car;
 import transport.Truck;
-
 public class Main {
     public static void main(String[] args) {
 
+        Car audi = new Car("Audi", "A8", 2.5);
+        Car bmw = new Car("BMW", "Z8", 3.0);
+        Car kia = new Car("Kia", "S4", 1.8);
+        Car lada = new Car("Lada", "Granta", 1.6);
+        Bus schoolBus = new Bus("Школьный", "Ш-1", 2.0);
+        Bus workBus = new Bus("Рабочий", "В-2", 1.2);
+        Bus cityBus = new Bus("Городской", "Г-14", 3.0);
+        Bus touristBus = new Bus("Туристический", "Т-11", 3.5);
+        Truck kamaz = new Truck("KamAZ", "K-10", 2.6);
+        Truck zil = new Truck("ZIL", "M-2", 2.0);
         Truck ural = new Truck("URAL", "Y-4", 3.0);
         Truck gaz = new Truck("GAZ", "G-6", 3.0);
 
-        DriverCar ivan = new DriverCar("Иван", 1.0);
-        DriverTruck igor = new DriverTruck("Игорь", 15.0);
-        DriverBus vova = new DriverBus("Вова", 7.5);
+        DriverCar vasya = new DriverCar("Вася", 1.0);
+        DriverTruck alesha = new DriverTruck("Алеша", 15.0);
+        DriverBus misha = new DriverBus("Миша", 7.5);
 
-        Car audi = null;
         System.out.println(audi);
         audi.bestTime();
-        Car bmw = null;
         System.out.println(bmw);
+        bmw.startMoving();
+        System.out.println(lada);
+        lada.finishMoving();
+        System.out.println(kia);
+        kia.pitStop();
+        System.out.println();
+        System.out.println(workBus);
+        workBus.maxSpeed();
+        System.out.println(schoolBus);
+        schoolBus.startMoving();
+        System.out.println(cityBus);
+        cityBus.finishMoving();
+        System.out.println(touristBus);
+        touristBus.pitStop();
+        touristBus.bestTime();
+        System.out.println();
+        System.out.println(kamaz);
+        kamaz.pitStop();
+        System.out.println(ural);
+        ural.bestTime();
+        System.out.println(gaz);
         gaz.maxSpeed();
-        Truck zil = null;
         System.out.println(zil);
         zil.startMoving();
         System.out.println();
 
-        ivan.startMove(audi);
-        Car lada = null;
-        ivan.refill(lada);
-        ivan.stopMove(bmw);
-        System.out.println(ivan);
+        vasya.startMove(audi);
+        vasya.refill(lada);
+        vasya.stopMove(bmw);
+        System.out.println(vasya);
         System.out.println();
 
-        igor.startMove(zil);
-        igor.stopMove(gaz);
-        Truck kamaz = null;
-        igor.refill(kamaz);
-        System.out.println(igor);
+        alesha.startMove(zil);
+        alesha.stopMove(gaz);
+        alesha.refill(kamaz);
+        System.out.println(alesha);
         System.out.println();
 
-        Object cityBus = null;
-        vova.startMove(cityBus);
-        Object touristBus = null;
-        vova.stopMove(touristBus);
-        Object workBus = null;
-        vova.refill(workBus);
-        System.out.println(vova);
+        misha.startMove(cityBus);
+        misha.stopMove(touristBus);
+        misha.refill(workBus);
+        System.out.println(misha);
 
     }
 }

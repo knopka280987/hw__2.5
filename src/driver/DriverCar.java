@@ -2,7 +2,7 @@ package driver;
 
 import transport.Car;
 
-public class DriverCar extends Driver<Car> {
+public class DriverCar extends Driver <Car> {
 
     public DriverCar(String name, Double drivingExperience) {
         super(name, "B", drivingExperience);
@@ -18,12 +18,12 @@ public class DriverCar extends Driver<Car> {
     @Override
     public void stopMove(Car transport) {
         System.out.println("Водитель " + getName() + " остановился на автомобиле " + transport.getBrand() + " "
-                + transport.getModel() + ".");
+                + transport.getModel() + "." );
     }
 
     @Override
     public void refill(Car transport) {
         System.out.println("Водитель " + getName() + " заправил автомобиль " + transport.getBrand() + " "
-                + transport.getModel() + ".");
+                + transport.getModel() + "." );
     }
 }

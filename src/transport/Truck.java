@@ -1,18 +1,40 @@
 package transport;
 
+import com.sun.jdi.connect.Transport;
 
-public class Truck extends Transport implements Competing {
-    public Truck(String brand) {
+public class Truck implements Competing, Transport {
+
+    public Truck(String brand, String model, Double engineVolume) {
         super();
     }
-
-    public Truck(String ural, String s, double v) {
-        super();
+    @Override
+    public void startMoving() {
+        System.out.println("Грузовик начал движение с грузом");
+    }
+    @Override
+    public void finishMoving() {
+        System.out.println("Грузовик привез груз в пункт назначения");
+    }
+    @Override
+    public void pitStop() {
+        System.out.println("Грузовик " + getBrand() + " остановился поменять колесо");
     }
 
-    public String getBrand() {
+    private String getBrand() {
+        return null;
+    }
 
+    @Override
+    public void maxSpeed() {
+        System.out.println("Грузовик " + getBrand() + " показал лучшую скорость");
+    }
+    @Override
+    public void bestTime() {
+        System.out.println("Грузовик " + getBrand() + " приехал первым");
+    }
 
+    @Override
+    public String name() {
         return null;
     }
 }

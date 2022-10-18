@@ -1,8 +1,8 @@
 package driver;
 
-import transport.Truck;
+import com.sun.jdi.connect.Transport;
 
-public class DriverTruck extends Driver <Truck>{
+public class DriverTruck<Truck extends Transport> extends Driver <Truck>{
     public DriverTruck(String name, Double drivingExperience) {
         super(name, "C", drivingExperience);
     }
@@ -11,18 +11,18 @@ public class DriverTruck extends Driver <Truck>{
     @Override
     public void startMove(Truck transport) {
         System.out.println("Водитель " + getName() + " участвует в заезде. Начал движение на грузовике "
-                + transport.getBrand() + " " + transport.getModel() + ".");
+                + transport.name() + " " + transport.name() + ".");
     }
 
     @Override
     public void stopMove(Truck transport) {
-        System.out.println("Водитель " + getName() + " приехал на грузовике " + transport.getBrand() + " "
-                + transport.getModel() + "." );
+        System.out.println("Водитель " + getName() + " приехал на грузовике " + transport.name() + " "
+                + transport.name() + "." );
     }
 
     @Override
     public void refill(Truck transport) {
-        System.out.println("Водитель " + getName() + " заправил грузовик " + transport.getBrand() + " "
-                + transport.getModel() + "." );
+        System.out.println("Водитель " + getName() + " заправил грузовик " + transport.name() + " "
+                + transport.name() + "." );
     }
 }
